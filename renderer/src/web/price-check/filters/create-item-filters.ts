@@ -14,6 +14,7 @@ interface CreateOptions {
   activateStockFilter: boolean
   exact: boolean
   useEn: boolean
+  defaultMerchantOnly: boolean
 }
 
 export function createFilters (
@@ -25,7 +26,7 @@ export function createFilters (
     trade: {
       offline: false,
       onlineInLeague: false,
-      merchantOnly: false,
+      merchantOnly: opts.defaultMerchantOnly,
       listed: undefined,
       currency: opts.currency,
       league: opts.league,
